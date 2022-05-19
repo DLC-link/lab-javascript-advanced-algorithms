@@ -20,7 +20,7 @@ describe('Queue', () => {
   });
 
   describe('Method "canEnqueue"', () => {
-    it('should return true if queue is empty', () => {
+    it('should return true if queue is not full', () => {
     });
 
     it('should return false if queue is full', () => {
@@ -35,19 +35,6 @@ describe('Queue', () => {
   });
 
   describe('Method "dequeue"', () => {
-    it('should be declared', () => {
-      expect(typeof queue.dequeue).toBe('function');
-    });
-
-    it('should return the element removed from the beggining of the queue', () => {
-      queue.enqueue(19);
-      queue.enqueue(88);
-      expect(queue.dequeue()).toBe(19);
-    });
-
-    it('should throw error with message "QUEUE_UNDERFLOW" if there are no elements in the queue', () => {
-      expect(() => queue.dequeue()).toThrow(new Error('QUEUE_UNDERFLOW'));
-    });
   });
 
   describe('Method "display"', () => {
