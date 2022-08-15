@@ -29,9 +29,9 @@ describe('Stack', () => {
     });
 
     it('should return false if stack is full', () => {
-      stack.MAX_SIZE = 1;
-      stack.stackControl.push(1);
-      expect(stack.canPush()).toBe(false);
+      // TODO:
+
+
     });
   });
 
@@ -45,8 +45,7 @@ describe('Stack', () => {
     });
 
     it('should return false if stack contains any elements', () => {
-      stack.stackControl.push(1);
-      expect(stack.isEmpty()).toBe(false);
+      // TODO: 
     });
   });
 
@@ -56,10 +55,8 @@ describe('Stack', () => {
     });
 
     it('should add the indicated element to the stack', () => {
-      const value = 19;
-      stack.push(value);
-      expect(stack.stackControl.length).toBe(1);
-      expect(stack.stackControl[stack.stackControl.length - 1]).toBe(value);
+      // TODO:
+
     });
 
     it('should return the stack when an element is inserted', () => {
@@ -67,9 +64,8 @@ describe('Stack', () => {
     });
 
     it('should insert the elements in the received order', () => {
-      stack.push(19);
-      stack.push(88);
-      expect(stack.stackControl).toEqual([19, 88]);
+      // TODO:
+      
     });
 
     it('should throw error with message "STACK_OVERFLOW" if the stack is full', () => {
@@ -80,19 +76,8 @@ describe('Stack', () => {
   });
 
   describe('Method "pop"', () => {
-    it('should be declared', () => {
-      expect(typeof stack.pop).toBe('function');
-    });
+    // TODO:
 
-    it('should return the element removed from the end of the stack', () => {
-      stack.push(19);
-      stack.push(88);
-      expect(stack.pop()).toBe(88);
-    });
-
-    it('should throw error with message "STACK_UNDERFLOW" if there are no elements in the stack', () => {
-      expect(() => stack.pop()).toThrow(new Error('STACK_UNDERFLOW'));
-    });
   });
 
   describe('Method "display"', () => {
