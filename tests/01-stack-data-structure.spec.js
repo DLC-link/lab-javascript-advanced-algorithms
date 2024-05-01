@@ -29,9 +29,9 @@ describe('Stack', () => {
     });
 
     it('should return false if stack is full', () => {
-      // TODO:
-
-
+      stack.MAX_SIZE = 1;
+      stack.stackControl = ['a'];
+      stack.expect(stack.canPush()).toBe(false);
     });
   });
 
@@ -45,7 +45,8 @@ describe('Stack', () => {
     });
 
     it('should return false if stack contains any elements', () => {
-      // TODO: 
+      stack.stackControl = ['b'];
+      expect(stack.isEmpty()).toBe(false);
     });
   });
 
@@ -55,17 +56,20 @@ describe('Stack', () => {
     });
 
     it('should add the indicated element to the stack', () => {
-      // TODO:
-
+      let element = 'c';
+      stack.push(element);
+      stack.push(element);
+      expect(stack.stackControl[0]).toEqual(element);
+      expect(stack.stackControl[1]).toEqual(element);
     });
 
     it('should return the stack when an element is inserted', () => {
-      expect(stack.push(19)).toEqual([19]);
+      stack.stackControl = [1, 2];
+      expect(stack.push(19)).toEqual([1, 2, 19]);
     });
 
     it('should insert the elements in the received order', () => {
       // TODO:
-      
     });
 
     it('should throw error with message "STACK_OVERFLOW" if the stack is full', () => {
@@ -76,8 +80,17 @@ describe('Stack', () => {
   });
 
   describe('Method "pop"', () => {
-    // TODO:
-
+    it('should return the last element added to stack', () => {});
+    it('should throw an exception when stack is empty', () => {
+      expect(() => stack.pop()).toThrow(new Error('STACK_UNDERFLOW'));
+    });
+    it('should remove the last element', () => {
+      stack.stackControl = ['a', 'b', 'c', 'd'];
+      let stackSize = stack.stackControl.length;
+      stack.pop();
+      expect(stack.stackControl.length).toEqual(stackSize - 1);
+      expect(stack.stackControl).toEqual(['a', 'b', 'c']);
+    });
   });
 
   describe('Method "display"', () => {
@@ -89,6 +102,5 @@ describe('Stack', () => {
       stack.push(10);
       expect(stack.display()).toEqual([10]);
     });
-  });  
+  });
 });
-
